@@ -29,4 +29,12 @@ public class PersonDao {
         people.add(person);
     }
 
+    public void update(int id, Person updatedPerson) {
+        Person personToBeUpdate = show(id);
+        personToBeUpdate.setName(updatedPerson.getName());
+    }
+
+    public void delete(int id) {
+        people.removeIf(e->e.getId()==id);
+    }
 }
